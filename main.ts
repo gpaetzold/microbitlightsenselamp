@@ -3,14 +3,8 @@ basic.showIcon(IconNames.Happy)
 basic.forever(function () {
     lightness = input.lightLevel()
     if (lightness > 10) {
-        basic.clearScreen()
+        pins.digitalWritePin(DigitalPin.P1, 0)
     } else {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
+        pins.digitalWritePin(DigitalPin.P1, 1)
     }
 })
